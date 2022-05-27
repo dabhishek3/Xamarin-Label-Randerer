@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:customControls="clr-namespace:App1.CustomControls"
+             x:Class="App1.MainPage">
+
+    
+    <Grid Padding="0,20,0,0" BackgroundColor="White">
+        <Label Text="Effects Demo" FontAttributes="Bold" HorizontalOptions="Center" />
+        <customControls:GradientLabel Text="Label Shadow Effects" FontAttributes="Bold" TextColor1="Yellow" 
+    TextColor2="DeepPink"  FontSize="35" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+            <Label.Effects>
+                <customControls:ShadowEffect Radius="5" DistanceX="5" DistanceY="10">
+                    <customControls:ShadowEffect.Color>
+                        <OnPlatform x:TypeArguments="Color">
+                            <On Platform="iOS" Value="Black" />
+                            <On Platform="Android" Value="White" />
+                            <On Platform="UWP" Value="Red" />
+                        </OnPlatform>
+                    </customControls:ShadowEffect.Color>
+                </customControls:ShadowEffect>
+            </Label.Effects>
+        </customControls:GradientLabel>
+        <!--<Label Text="Label Shadow Effect" FontSize="25" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+            <Label.Effects>
+                <customControls:CustomLabel Radius="5" DistanceX="5" DistanceY="5" Colors="#071c33,#071c33,#030c17" Mode="ToBottomRight">
+                    <customControls:CustomLabel.Color>
+                        <OnPlatform x:TypeArguments="Color">
+                            <On Platform="iOS" Value="Black" />
+                            <On Platform="Android" Value="White" />
+                            <On Platform="UWP" Value="Red" />
+                        </OnPlatform>
+                    </customControls:CustomLabel.Color>
+                </customControls:CustomLabel>
+            </Label.Effects>
+        </Label>-->
+    </Grid>
+
+</ContentPage>
